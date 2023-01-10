@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'alura_receita',
+        'NAME': 'tl_store',
         'USER': 'postgres',
         'PASSWORD': '123456',
         'HOST': 'localhost',
