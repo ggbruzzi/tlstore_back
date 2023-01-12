@@ -12,7 +12,7 @@ class Adress(models.Model):
     state = models.CharField(max_length=2, validators=[MinLengthValidator(2)])
 
     def __str__(self):
-        return self.pk
+        return str(self.pk)
         
 
 class Users(models.Model):
