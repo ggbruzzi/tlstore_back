@@ -12,7 +12,7 @@ class Adress(models.Model):
     state = models.CharField(max_length=2, validators=[MinLengthValidator(2)])
 
     def __str__(self):
-        return self.national_number
+        return self.pk
         
 
 class Users(models.Model):
@@ -25,10 +25,13 @@ class Users(models.Model):
 
 
 class Countries(models.Model):
-    name = models.CharField(max_length=30, unique=True)
+    name = models.CharField(max_length=30, unique=True,)
     
     def __str__(self):
         return self.name.upper()
+    
+
+    
 
 
 class Categories(models.Model):

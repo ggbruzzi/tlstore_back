@@ -8,3 +8,4 @@ print(salt)
 hash = bcrypt.hashpw(senha, salt)
 
 print(hash)
+
