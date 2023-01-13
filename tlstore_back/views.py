@@ -20,7 +20,7 @@ class UsersViewSet(viewsets.ModelViewSet):
       "number": request.data.get('number')
     }
     serializer_adress = self.serializer_class_adress(data=AdressData)
-    if serializer_adress.is_valid() and serializer_user.is_valid():
+    if serializer_adress.is_valid():
       serializer_adress.save()
     else:
       response = Response(serializer_adress.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
