@@ -11,31 +11,31 @@ class Adress(models.Model):
     city = models.CharField(max_length=30)
     state = models.CharField(max_length=2, validators=[MinLengthValidator(2)])
 
-    def __str__(self):
-        return str(self.pk)
-        
+    def str(self):
+      return str(self.pk)
+
 
 class Users(models.Model):
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
     email = models.EmailField()
-    password = models.CharField(max_length=50)    
+    password = models.CharField(max_length=50)
     addresID = models.ForeignKey(Adress, on_delete=models.CASCADE)
 
 
 
 class Countries(models.Model):
     name = models.CharField(max_length=30, unique=True,)
-    
-    def __str__(self):
-        return self.name.upper()
-    
 
-    
+    def str(self):
+        return self.name.upper()
+
+
+
 class Categories(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
-    def __str__(self):
+    def str(self):
         return self.name.upper()
 
 
@@ -45,10 +45,10 @@ class Teams(models.Model):
     country = models.ForeignKey(Countries, on_delete=models.CASCADE)
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def str(self):
         return self.name.upper()
 
-    
+
 class Products(models.Model):
     description = models.TextField(max_length=200)
     season = models.CharField(max_length=40)
@@ -61,5 +61,3 @@ class Sells(models.Model):
     date = models.DateField()
     userID = models.ForeignKey(Users, on_delete=models.CASCADE)
     productID = models.ForeignKey(Products, on_delete=models.CASCADE)
-
-

@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from tlstore_back.views import UsersViewset
+from tlstore_back.views import UsersViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('Users', UsersViewset, basename='Users')
+router.register('Users', UsersViewSet, basename='Users')
 
 
 urlpatterns = [
